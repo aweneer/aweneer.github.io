@@ -40,7 +40,7 @@ Během hry se zapisují do proměnných určité úkony, které se hráči poved
 Na pozadí hry hraje hudba, kterou lze kdykoliv přerušit na stránce Controls, nicméně zvuky ničení a při výhře jsou vynucené, stejně tak jako hudba v hardmódu, a tak je vypnout nejde.
 
 
-## Ve složce /src jsou uloženy původní zdrojové soubory, které byly před buildingem aplikace, která běží na doméně https://honza999.github.io/
+## Pro kontrolu kódu: Ve složce /src jsou uloženy původní zdrojové soubory, které byly před buildingem aplikace, která běží na doméně https://honza999.github.io/
 
 ## Kde najít body hodnocení
 ### Povinné body
