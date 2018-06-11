@@ -1,4 +1,5 @@
 # Semestrální práce do předmětu B0B39KAJ (Klientské aplikace v Javascriptu) - BouncyBall
+# Autor: Jan Hlaváč
 
 
 ## Cíl projektu
