@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+# Semestrální práce do předmětu B0B39KAJ (Klientské aplikace v Javascriptu) - BouncyBall
 
-You can use the [editor on GitHub](https://github.com/honza999/honza999.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Cíl projektu
 
-### Markdown
+Cílem projektu je vytvořit single page aplikaci, v tomto případě 2D hru využívající technologie HTML5, Javascript a CSS. Téma hry je odvozeno z již existující hry [Arkanoid](https://cs.wikipedia.org/wiki/Arkanoid). Tato hra je poměrně jednodušší, ale základní princip hry je stejný, odrazit míček od pálky tak, aby míček zničil všechny bloky na herní ploše.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Dostupnost aplikace
 
-```markdown
-Syntax highlighted code block
+Online na webu [honza999.github.io](honza999.github.io).
 
-# Header 1
-## Header 2
-### Header 3
+## Postup
 
-- Bulleted
-- List
+Téma jsem zvolil, protože se mi koncept této hry vcelku líbil a myslel jsem si, že herní logika nebude až tak složitá.
 
-1. Numbered
-2. List
+Jako první jsem se letmo seznámil s knihovnou React, abych si usnadnil tvorbu jednotlivých stránek pomocí jejích komponent. Když byl základ hotový, přidal jsem do komponent některé potřebné elementy (např. <audio>) a hlavně je mezi sebou propojil, přešel jsem k samotnému programování herní logiky uvnitř canvasu.
 
-**Bold** and _Italic_ and `Code` text
+Obsluhovat canvas a sepsat onu logiku dalo značné množství práce, např. napojení React komponenty na JS třídu, která tvoří herní plátno, aby se dalo vykreslování snadno ovládat (přechod na jinou stránku - přerušení hry (renderování).
 
-[Link](url) and ![Image](src)
-```
+Herní logika funguje na principu vytoření nové instance třídy (základní, nebo rozšířené (prototypová dědičnost)), na kterou se zavolá spouštěcí metoda, která zavolá hlavní metodu třídy, která vystaví celou logiku. Uvnitř této funkce jsou deklarovány jak hlavní vykreslovací funkce, tak pomocné funkce pro kreslení, detekci kolize, zápis statistik nebo zpracování událostí. Po deklaraci těchto metod se nastaví potřebné proměnné, vytvoří se ničitelné bloky (objekty).
+Poté se zavolá metoda drawBoard(), která spustí kompletní vykreslení. Na začátku vykreslí jednotlivé canvas elementy (míč, bloky, pálku a textové tagy), zkontroluje kolizi a v závislosti na podmínkách posouvá míček dál, případně mění proměnné (např. skóre, životy, ...)
+V určitých konečných momentech se zapisují statistiky do LocalStorage.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+V poslední řadě jsem zpracoval CSS celé aplikace, kde jsem se snažil vzhled stylizovat tak, aby byl fixní a nepříliš křiklavý barevně.
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/honza999/honza999.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Základní popis funkčnosti
 
-### Support or Contact
+Po načtení hlavní stránky aplikace je zobrazena pouze navigace v horní části obrazovky a footer. K jednotlivým stránkám lze přistoupit pomocí odkazl v navigaci. Na tyto odkazy je aplikována CSS animace.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Bez vytvořeného profilu lze volně prohlížet pouze stránku s nastavením Controls a stránku About, zbylé tři stránky nutí uživatele vytvořit si profil, který se pak ukládá v LocalStorage. Po validaci vstupu je profil vytvořen a uživatel může začít hrát, prohlédnout statistiky, nebo změnit jméno profilu či profil smazat.
+
+Stránka s hrou načte canvas a čeká se na interakci uživatele, aby se míček rozpohyboval. Pohyb doleva/doprava pomocí šipek na klávesnici započne hru.
+
+Hra má dva módy, ke kterým lze přistoupit pomocí odkazu nad canvas plochou. Hardmore rozšiřuje funkcionalitu základního módu pomocí prototypové dědičnosti uvnitř třídy (vazba extends).
+
+Během hry se zapisují do proměnných určité úkony, které se hráči povedlo uskutečnit: smrt, zničení bloku, výhra, ... Po skončení hry jsou statistiky zapsány do LocalStorage.
+
+Na pozadí hry hraje hudba, kterou lze kdykoliv přerušit na stránce Controls, nicméně zvuky ničení a při výhře jsou vynucené, stejně tak jako hudba v hardmódu, a tak je vypnout nejde.
