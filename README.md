@@ -3,11 +3,11 @@
 
 ## Cíl projektu
 
-Cílem projektu je vytvořit single page aplikaci, v tomto případě 2D hru využívající technologie HTML5, Javascript a CSS. Téma hry je odvozeno z již existující hry [Arkanoid](https://cs.wikipedia.org/wiki/Arkanoid). Tato hra je poměrně jednodušší, ale základní princip hry je stejný, odrazit míček od pálky tak, aby míček zničil všechny bloky na herní ploše.
+Cílem projektu je vytvořit single page aplikaci, v tomto případě 2D hru využívající technologie HTML5, Javascript a CSS. Téma hry je odvozeno z již existující hry https://cs.wikipedia.org/wiki/Arkanoid. Tato hra je poměrně jednodušší, ale základní princip hry je stejný, odrazit míček od pálky tak, aby míček zničil všechny bloky na herní ploše.
 
 ## Dostupnost aplikace
 
-Online na webu [honza999.github.io](honza999.github.io).
+Online na webu https://honza999.github.io
 
 ## Postup
 
