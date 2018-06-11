@@ -44,19 +44,19 @@ Na pozadí hry hraje hudba, kterou lze kdykoliv přerušit na stránce Controls,
 
 ## Kde najít body hodnocení
 ### Povinné body
-Sémantické značky - viz. skoro každá komponenta
-Porkočilé selektory - viz. styles.css
-CSS animace - navigace (menu) v horní části obrazovky po najetí kurzoru
-OOP (dědičnost) - pomocí dvou tříd a klíč. slova extends, funkcionalita navíc
-Pokročilé JS API - několikrát použitý LocalStorage
+Sémantické značky - viz. skoro každá komponenta  
+Porkočilé selektory - viz. styles.css  
+CSS animace - navigace (menu) v horní části obrazovky po najetí kurzoru  
+OOP (dědičnost) - pomocí dvou tříd a klíč. slova extends, funkcionalita navíc  
+Pokročilé JS API - několikrát použitý LocalStorage  
 ### Další body
-Cross-browser kompatibilita - zkoušeno
-Grafika (Canvas) - komponenta Game a HardGame, s Canvasem pracuje GameBoard a jeho potomek
-Média (Audio) - hudba na pozadí, v komponentě MusicPlayer, skryté pomocí CSS, a vypíná se na stránce (komponentě) Controls
-Formulářové prvky - komponenta Profile, validace a atributy
-Offline aplikace - funguje offline, upozornění ale přijde vždy (viz JS offline)
-Vendor prefixy - několikrát v souboru se styly, a tam hlavně u CSS animace
-Framework/Knihovna - aplikace je v Reactu
-Funkční historie - stará se o to React Router
-Ovládání médií - třída GameBoard vytváří new Audio(...), které poté uvnitř svých funkčí spouští dle příležitosti
-Offline aplikace (JS) - při odpojení od sítě vyskočí okno s upozorněním
+Cross-browser kompatibilita - zkoušeno  
+Grafika (Canvas) - komponenta Game a HardGame, s Canvasem pracuje GameBoard a jeho potomek  
+Média (Audio) - hudba na pozadí, v komponentě MusicPlayer, skryté pomocí CSS, a vypíná se na stránce (komponentě) Controls  
+Formulářové prvky - komponenta Profile, validace a atributy  
+Offline aplikace - funguje offline, upozornění ale přijde vždy (viz JS offline)  
+Vendor prefixy - několikrát v souboru se styly, a tam hlavně u CSS animace  
+Framework/Knihovna - aplikace je v Reactu  
+Funkční historie - stará se o to React Router  
+Ovládání médií - třída GameBoard vytváří new Audio(...), které poté uvnitř svých funkčí spouští dle příležitosti  
+Offline aplikace (JS) - při odpojení od sítě vyskočí okno s upozorněním  
