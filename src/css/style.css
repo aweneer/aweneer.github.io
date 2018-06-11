@@ -1,0 +1,231 @@
+
+
+/* Declaring variables to use within document*/
+:root {
+    --color1: #41B1A3;
+    --color2: #C38D9E;
+    --background: #0a4b4b;
+    --mainbg: #006666;
+    background-color: var(--background);
+    position: relative;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+
+.App {
+    text-align: center;
+  }
+
+/* Everything in element with class .App that is not header will have these styles */
+.App > *:not(header) {
+    color: silver;
+    display: grid;
+    margin: auto;
+    background: var(--mainbg);
+    width: 900px;
+    height: 100%;
+    justify-content: center;
+}
+
+/* Hides audio and header elements */
+.App > audio, header {
+    display: none;
+}
+/* each content of page has a main element
+that has min height disregarding the content */
+main {
+    border: 1px solid #0a4b4b;
+    margin: 10px;
+    top: 0;
+    bottom: 0;
+    min-height: 80vh;
+}
+/* limiting section width */
+section>*:not(canvas) {
+    max-width: 500px;
+}
+
+h1, h2, h3, h4 {
+    color: white;
+}
+p > a.footerLink {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+p > a {
+    color: silver;
+}
+
+.active {
+    font-style: bold;
+    color: white;
+}
+
+li {
+    display: inline-block;
+    background: var(--color1);
+    padding: 10px;
+    border-radius: 20px;
+    margin: 1em;
+    width: 5em;
+}
+
+/* centering fix */
+section > form.profileCreate {
+    margin-left: 75px
+}
+
+/* centering fix */
+section > div {
+    margin-left: 20px;
+}
+
+/* displays form input elements below each other and with the same width */
+form > * {
+    display: grid;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+form > *:focus {
+    border: 2px solid red;
+    border-radius: 20px;
+}
+/* Input placeholder text is in center now */
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder {
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid white;
+    width: 300px;
+    justify-content: center;
+}
+
+th, td {
+    color: white;
+    border: 1px solid silver;
+}
+
+p > code {
+    color: silver;
+    padding: 3px;
+    background: black;
+    border-radius: 30%;
+}
+
+canvas {
+    border: 12px solid rgb(133, 133, 133);
+    box-shadow:  10px 10px 8px black;
+}
+
+a.hard {
+    padding: 10px;
+    background: var(--color1);
+    border-radius: 20px;
+}
+
+a.easy {
+    padding: 10px;
+    background: var(--color1);
+    border-radius: 20px;
+}
+
+li > a, a.easy, a.hard {
+    color: silver;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+
+/*
+Animation and vendor prefixes
+The animation occurs on hover at navigation links and mode change link on Game page
+It represents something like heartbeat
+Duration of the animation is 2.7s and repeats ad infinitum
+*/
+li > a:before, a.easy:before, a.hard:before {
+    content: "";
+    border-bottom: solid 1px #d9534f;
+    position: absolute;
+    bottom: 0; left: 30%;
+    width: 0px;
+    -webkit-transform: scale(0);
+       -moz-transform: scale(0);
+        -ms-transform: scale(0);
+         -o-transform: scale(0);
+            transform: scale(0); 
+  }
+  
+  li > a:hover:before, a.easy:hover:before, a.hard:hover:before {
+    border-bottom: 3px solid #d9534f;
+    width: 40%;
+    -webkit-animation: close 2.7s infinite ease-in-out;
+            animation: close 2.7s infinite ease-in-out;
+  }
+  
+  li > a:hover, a.easy:hover, a.hard:hover {
+    -webkit-animation: begin 2.7s infinite ease-in-out;
+            animation: begin 2.7s infinite ease-in-out;
+  }
+  
+  /* scale alters size of the link elements
+  begin keyframe describes behaviour during first phase of "beating"
+  close then the returning heartbeat
+  */
+  @-webkit-keyframes begin {
+    0% { -webkit-transform: scale(1); }
+    10% { -webkit-transform: scale(1.2); }
+    20% { -webkit-transform: scale(1); }
+    30% { -webkit-transform: scale(1.2); }
+    80% { -webkit-transform: scale(1); }
+  }
+  
+  @-webkit-keyframes close {
+    0% { -webkit-transform: scaleX(0); }
+    10% { -webkit-transform: scaleX(1); }
+    20% { -webkit-transform: scaleX(0); }
+    30% { -webkit-transform: scaleX(1); }
+    80% { -webkit-transform: scaleX(0); }
+  }
+  
+  @keyframes begin {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.2); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.2); }
+    80% { transform: scale(1); }
+  }
+  
+  @keyframes close {
+    0% { transform: scaleX(0); }
+    10% { transform: scaleX(1); }
+    20% { transform: scaleX(0); }
+    30% { transform: scaleX(1); }
+    80% { transform: scaleX(0); }
+  }
